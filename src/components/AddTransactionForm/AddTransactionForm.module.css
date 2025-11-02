@@ -1,0 +1,250 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 25px;
+  align-items: center;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 0 0 10px 0;
+}
+
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 254px;
+  height: 44px;
+}
+
+.toggleLabel {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 60%);
+  transition: color 0.3s ease;
+}
+.toggleLabel.income.active {
+  color: #ffb627;
+}
+.toggleLabel.expense.active {
+  color: #ff868d;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "+"; /* Gelir için + */
+  height: 44px;
+  width: 44px;
+  bottom: -2px;
+  left: -2px;
+  background-color: #ffb627;
+  border-radius: 50%;
+  transition: 0.4s;
+  /* Artı işaretini ortalamak için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+/* Gider (Expense) seçilince (checked) */
+.switch input:checked + .slider::before {
+  transform: translateX(40px);
+  background-color: #ff868d;
+  content: "-"; /* Gider için - */
+}
+
+/* --- Kategori Select (Gider için) --- */
+.categorySelect {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  padding: 12px 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.categorySelect:focus {
+  outline: none;
+  border-bottom-color: #fff;
+}
+/* Select'in option elemanlarını stillendirme */
+.categorySelect option {
+  background-color: #3a2d80;
+  color: #fff;
+}
+
+/* --- Miktar ve Tarih Satırı --- */
+.inputRow {
+  display: flex;
+  gap: 30px;
+}
+
+/* Tutar ve Tarih inputlarının ikisi de %50 yer kaplasın */
+/* DatePicker bir <div> içine sarılı olduğu için > div kullandık */
+.inputRow > .inputField,
+.inputRow > div {
+  width: 50%;
+}
+
+.inputField,
+.comment {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 60%);
+  padding: 12px 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box; /* Padding'in genişliği etkilememesi için */
+}
+
+.inputField::placeholder,
+.comment::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.inputField:focus,
+.comment:focus {
+  outline: none;
+  border-bottom-color: #fff;
+}
+
+.inputField {
+  text-align: center;
+}
+
+.comment {
+  text-align: left;
+}
+
+/* DatePicker'ın input'u da diğer input'lar gibi görünmeli */
+.datePicker {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  padding: 12px 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+.datePicker:focus {
+  outline: none;
+  border-bottom-color: #fff;
+}
+
+/* DatePicker'ın ikonunu eklemek (JSX'teki .inputRow > div hedefleniyor) */
+.inputRow > div:last-child {
+  position: relative;
+}
+
+.inputRow > div:last-child::after {
+  content: "📅"; /* Takvim ikonu */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  pointer-events: none; /* İkonun tıklamayı engellememesi için */
+}
+
+/* --- Hata Mesajları --- */
+.error {
+  color: #ff868d;
+  font-size: 12px;
+  text-align: left;
+  margin-top: -20px;
+  margin-bottom: -10px;
+}
+/* Miktar/Tarih satırının altındaki hata ortalansın */
+.inputRow + .error {
+  text-align: center;
+}
+
+/* --- Buton Grubu --- */
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* --- ADD Butonu (Gradient) --- */
+.addButton {
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: linear-gradient(90deg, #ffb627 0%, #9e40ba 61%, #7000ff 91%);
+  color: white;
+  letter-spacing: 10%;
+  width: 300px;
+  height: 50px;
+}
+.addButton:hover {
+  opacity: 0.9;
+  box-shadow: 0 5px 15px rgba(255, 150, 80, 0.3);
+}
+
+/* --- CANCEL Butonu (Beyaz) --- */
+.cancelButton {
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fff;
+  color: #623f8b;
+  letter-spacing: 10%;
+  width: 300px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+.cancelButton:hover {
+  background: rgba(255, 133, 139, 0.9);
+  color: #fff;
+  transform: scale(1.05);
+}

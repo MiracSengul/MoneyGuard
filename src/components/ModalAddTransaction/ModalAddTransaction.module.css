@@ -1,0 +1,179 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgba(83, 61, 186),
+    rgba(80, 48, 154),
+    rgba(106, 70, 165, 0.75),
+    rgba(133, 93, 175, 0.19)
+  );
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s ease;
+  max-width: 540px;
+  width: 100%;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.closeButton:hover {
+  transform: scale(1.1);
+  color: #ffb627;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: overlayFadeIn 0.3s ease;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(83, 61, 186, 0.95),
+    rgba(80, 48, 154, 0.95),
+    rgba(106, 70, 165, 0.9)
+  );
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease;
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  color: #ffb627;
+}
+
+.closeBtn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .modalOverlay {
+    padding: 15px;
+  }
+  
+  .modalContent {
+    padding: 35px 25px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 10px;
+  }
+  
+  .modalContent {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+  
+  .closeBtn {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modalContent {
+    max-width: 520px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modalOverlay,
+  .modalContent,
+  .closeBtn {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .modalContent {
+    border: 2px solid #ffffff;
+  }
+  
+  .closeBtn {
+    border: 1px solid #ffffff;
+  }
+}

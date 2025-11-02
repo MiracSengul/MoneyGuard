@@ -1,0 +1,246 @@
+.nav {
+  grid-area: navigation;
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  list-style: none;
+  padding: 12px 20px;
+  margin: 0;
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.linkContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.navIcon {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  fill: #4A56E2;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.linkLabel {
+  display: none;
+  font-size: 12px;
+  color: #FBFBFB;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.navLink.active {
+  background: rgba(74, 86, 226, 0.1);
+}
+
+.navLink.active .navIcon {
+  fill: #FFFFFF;
+}
+
+.navLink.active::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #4A56E2;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  background: #4A56E2;
+  border-radius: 14px;
+  opacity: 0.4;
+  filter: blur(12px);
+  z-index: -1;
+  animation: activeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes activeGlow {
+  from {
+    opacity: 0.3;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 0.6;
+    filter: blur(16px);
+  }
+}
+
+@media (hover: hover) {
+  .navLink:hover {
+    transform: translateY(-2px);
+  }
+  
+  .navLink:hover .navIcon {
+    fill: #6C76F2;
+  }
+  
+  .navLink.active:hover .navIcon {
+    fill: #FFFFFF;
+  }
+}
+
+@media (min-width: 768px) {
+  .navList {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 40px;
+  }
+
+  .linkContent {
+    flex-direction: row;
+    gap: 20px;
+    padding: 12px 20px 12px 16px;
+    min-width: 180px;
+  }
+
+  .linkLabel {
+    display: block;
+    font-size: 18px;
+  }
+
+  .navIcon {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+
+  .navLink::before {
+    width: 32px;
+    height: 32px;
+    left: 16px;
+  }
+
+  .navLink.active::after {
+    width: 40px;
+    height: 40px;
+    left: 16px;
+  }
+
+  .navLink.active .linkLabel {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .currencyItem {
+    display: none;
+  }
+
+  @media (hover: hover) {
+    .navLink:hover .linkLabel {
+      transform: translateX(4px);
+    }
+    
+    .navLink:not(.active):hover .linkLabel {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .navList {
+    margin-bottom: 28px;
+  }
+  
+  .currencyItem {
+    display: list-item;
+  }
+}
+
+@media (max-width: 767px) {
+  .navList {
+    gap: 20px;
+    padding: 8px 16px;
+  }
+  
+  .navIcon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .navLink::before {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .navLink.active::after {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navLink,
+  .navIcon,
+  .linkLabel {
+    transition: none;
+  }
+  
+  .navLink.active::after {
+    animation: none;
+    opacity: 0.3;
+  }
+  
+  @media (hover: hover) {
+    .navLink:hover {
+      transform: none;
+    }
+  }
+}
+
+@media (prefers-contrast: high) {
+  .navLink.active::before {
+    background: #000000;
+    border: 2px solid #FFFFFF;
+  }
+  
+  .navLink.active .navIcon {
+    fill: #FFFFFF;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .navLink:active {
+    transform: scale(0.95);
+  }
+  
+  .navLink.active:active {
+    transform: scale(0.95) translateY(0);
+  }
+}

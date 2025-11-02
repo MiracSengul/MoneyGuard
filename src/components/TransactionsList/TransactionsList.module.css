@@ -1,0 +1,273 @@
+.mobileList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: center;
+	margin-bottom: 24px;
+  }
+  
+  .desktopContainer {
+	width: 100%;
+  }
+  
+  .filterContainer {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+  }
+  
+  @media (min-width: 768px) {
+	.desktopContainer {
+	  width: 704px;
+	  margin: 0 auto;
+	}
+  }
+  
+  @media (min-width: 1280px) {
+	.desktopContainer {
+	  width: 715px;
+	}
+  }
+  
+  .transactionTable {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	table-layout: fixed;
+	background: rgba(255, 255, 255, 0.02);
+	border-radius: 12px;
+	overflow: hidden;
+  }
+  
+  .tableHeader {
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+  }
+  
+  .tableHeader:hover {
+	opacity: 0.9;
+  }
+  
+  .tableHeader th {
+	background: rgba(82, 59, 126, 0.9);
+	color: #FFFFFF;
+	font-weight: 600;
+	text-align: left;
+	padding: 16px 12px;
+	font-size: 14px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dateHeader {
+	text-align: center;
+  }
+  
+  .typeHeader {
+	text-align: center;
+  }
+  
+  .categoryHeader {
+	text-align: left;
+  }
+  
+  .commentHeader {
+	text-align: left;
+  }
+  
+  .amountHeader {
+	text-align: right;
+  }
+  
+  .actionsHeader {
+	text-align: right;
+  }
+  
+  .transactionTable td {
+	padding: 16px 12px;
+	color: rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	vertical-align: middle;
+  }
+  
+  .transactionTable td:first-child {
+	text-align: center;
+  }
+  
+  .transactionTable td:nth-child(2) {
+	text-align: center;
+  }
+  
+  .transactionTable td:nth-child(3) {
+	text-align: left;
+  }
+  
+  .transactionTable td:nth-child(4) {
+	text-align: left;
+	max-width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  }
+  
+  .transactionTable td:nth-child(5) {
+	text-align: right;
+	font-weight: 600;
+  }
+  
+  .transactionTable td:last-child {
+	text-align: right;
+  }
+  
+  .scrollWrapper {
+	max-height: 540px;
+	overflow-y: auto;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .scrollWrapper::-webkit-scrollbar {
+	width: 8px;
+  }
+  
+  .scrollWrapper::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+  }
+  
+  .scrollWrapper::-webkit-scrollbar-thumb {
+	background: linear-gradient(135deg, #FFC727, #9E40BA);
+	border-radius: 4px;
+  }
+  
+  .scrollWrapper::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(135deg, #FFD54F, #B26BD6);
+  }
+  
+  .scrollWrapper {
+	scrollbar-width: thin;
+	scrollbar-color: #9E40BA rgba(255, 255, 255, 0.1);
+  }
+  
+  .emptyState {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 40px 20px;
+	color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .emptyIcon {
+	font-size: 3rem;
+	margin-bottom: 16px;
+	opacity: 0.7;
+  }
+  
+  .emptyTitle {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #FFFFFF;
+	margin-bottom: 8px;
+  }
+  
+  .emptyMessage {
+	font-size: 0.95rem;
+	margin-bottom: 20px;
+	line-height: 1.4;
+	max-width: 300px;
+  }
+  
+  .addButton {
+	background: linear-gradient(135deg, #FFC727, #9E40BA);
+	border: none;
+	border-radius: 24px;
+	color: #FFFFFF;
+	font-weight: 600;
+	padding: 12px 24px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	position: relative;
+	overflow: hidden;
+  }
+  
+  .addButton:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(158, 64, 186, 0.4);
+  }
+  
+  .addButton:active {
+	transform: translateY(0);
+  }
+  
+  .addIcon {
+	font-size: 1.1rem;
+	font-weight: bold;
+  }
+  
+  @media (max-width: 480px) {
+	.mobileList {
+	  gap: 12px;
+	  margin-bottom: 20px;
+	}
+	
+	.emptyState {
+	  padding: 30px 16px;
+	}
+	
+	.emptyIcon {
+	  font-size: 2.5rem;
+	}
+	
+	.emptyTitle {
+	  font-size: 1.1rem;
+	}
+	
+	.emptyMessage {
+	  font-size: 0.9rem;
+	}
+  }
+  
+  @media (min-width: 1280px) {
+	.transactionTable th,
+	.transactionTable td {
+	  padding: 18px 16px;
+	  font-size: 15px;
+	}
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+	.tableHeader,
+	.addButton {
+	  transition: none;
+	}
+	
+	.addButton:hover {
+	  transform: none;
+	}
+	
+	.scrollWrapper {
+	  scroll-behavior: auto;
+	}
+  }
+  
+  @media (prefers-contrast: high) {
+	.transactionTable {
+	  border: 1px solid #FFFFFF;
+	}
+	
+	.tableHeader th {
+	  background: #000000;
+	  border: 1px solid #FFFFFF;
+	}
+	
+	.addButton {
+	  border: 2px solid #FFFFFF;
+	}
+  }

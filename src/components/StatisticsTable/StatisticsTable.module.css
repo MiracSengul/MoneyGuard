@@ -1,0 +1,211 @@
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(82, 59, 126, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  background: rgba(82, 59, 126, 0.8);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.headerTitle {
+  color: #FBFBFB;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.categoryList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.categoryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.categoryItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+.categoryItem:last-child {
+  border-bottom: none;
+}
+
+.categoryInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.colorIndicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.categoryName {
+  color: #FBFBFB;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.categoryAmount {
+  color: #FBFBFB;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-width: 80px;
+  text-align: right;
+}
+
+.noData {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.summary {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px;
+}
+
+.summaryLabel {
+  color: #FBFBFB;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.expenseValue {
+  color: #FF868D;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.incomeValue {
+  color: #FFB627;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.categoryList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.categoryList::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.categoryList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.categoryList::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 350px;
+    padding: 24px;
+  }
+  
+  .header {
+    padding: 14px 12px;
+  }
+  
+  .categoryItem {
+    padding: 14px 12px;
+  }
+  
+  .categoryInfo {
+    gap: 20px;
+  }
+  
+  .colorIndicator {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 400px;
+  }
+  
+  .headerTitle {
+    font-size: 17px;
+  }
+  
+  .categoryName,
+  .categoryAmount,
+  .summaryLabel,
+  .expenseValue,
+  .incomeValue {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    padding: 10px 8px;
+  }
+  
+  .categoryItem {
+    padding: 10px 6px;
+  }
+  
+  .categoryInfo {
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .categoryItem {
+    transition: none;
+  }
+}

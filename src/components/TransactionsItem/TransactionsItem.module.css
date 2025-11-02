@@ -1,0 +1,224 @@
+.mobileCard {
+	width: 280px;
+	background: linear-gradient(135deg, rgba(59, 42, 92, 0.8), rgba(40, 24, 60, 0.9));
+	border-radius: 12px;
+	display: flex;
+	overflow: hidden;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+	margin-bottom: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .colorAccent {
+	width: 6px;
+	flex-shrink: 0;
+  }
+  
+  .cardContent {
+	flex: 1;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+  }
+  
+  .infoRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 8px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .label {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+  }
+  
+  .value {
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 400;
+  }
+  
+  .comment {
+	max-width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+  
+  .amount {
+	font-size: 16px;
+	font-weight: 700;
+  }
+  
+  .actionButtons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	margin-top: 8px;
+  }
+  
+  .editButton {
+	background: transparent;
+	border: none;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 14px;
+	cursor: pointer;
+	padding: 6px 12px;
+	border-radius: 6px;
+	transition: all 0.2s ease;
+  }
+  
+  .editButton:hover {
+	color: #FFB627;
+	background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .deleteButton {
+	background: linear-gradient(135deg, #FF6B6B, #FF868D);
+	border: none;
+	border-radius: 20px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	padding: 8px 16px;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  }
+  
+  .deleteButton:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
+  }
+  
+  .deleteButton:active {
+	transform: translateY(0);
+  }
+  
+  .tableRow {
+	background: transparent;
+	transition: background-color 0.2s ease;
+  }
+  
+  .tableRow:hover {
+	background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .tableRow td {
+	padding: 16px 12px;
+	color: rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	font-size: 14px;
+  }
+  
+  .dateCell {
+	text-align: left;
+	color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .typeCell {
+	text-align: center;
+	font-weight: 600;
+  }
+  
+  .categoryCell {
+	text-align: left;
+  }
+  
+  .commentCell {
+	text-align: left;
+	max-width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .amountCell {
+	text-align: right;
+	font-weight: 700;
+	font-size: 15px;
+  }
+  
+  .actionsCell {
+	text-align: right;
+  }
+  
+  .tableRow .actionButtons {
+	justify-content: flex-end;
+	gap: 8px;
+  }
+  
+  .tableRow .editButton {
+	padding: 6px 10px;
+	font-size: 16px;
+  }
+  
+  .tableRow .deleteButton {
+	padding: 6px 14px;
+	font-size: 13px;
+  }
+  
+  @media (min-width: 768px) {
+	.mobileCard {
+	  display: none;
+	}
+  }
+  
+  @media (max-width: 767px) {
+	.tableRow {
+	  display: none;
+	}
+  }
+  
+  @media (min-width: 1280px) {
+	.tableRow td {
+	  padding: 18px 16px;
+	  font-size: 15px;
+	}
+	
+	.commentCell {
+	  max-width: 280px;
+	}
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+	.editButton,
+	.deleteButton,
+	.tableRow {
+	  transition: none;
+	}
+	
+	.deleteButton:hover {
+	  transform: none;
+	}
+  }
+  
+  @media (prefers-contrast: high) {
+	.mobileCard {
+	  border: 2px solid #FFFFFF;
+	  background: #000000;
+	}
+	
+	.tableRow td {
+	  border-bottom: 2px solid #FFFFFF;
+	}
+  }
+  
+  @media (hover: none) and (pointer: coarse) {
+	.deleteButton:hover {
+	  transform: none;
+	  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+	}
+	
+	.deleteButton:active {
+	  transform: scale(0.95);
+	}
+  }

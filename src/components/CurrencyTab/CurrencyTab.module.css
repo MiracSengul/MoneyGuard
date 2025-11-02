@@ -1,0 +1,54 @@
+.currencyButton {
+    cursor: pointer;
+    color: #734AEF;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.currencyButton:hover {
+    color: white;
+    background-color: #734AEF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(115, 74, 239, 0.3);
+}
+
+.currencyButton:focus {
+    color: white;
+    background-color: #734AEF;
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.currencyButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(115, 74, 239, 0.4);
+}
+
+.currencyIcon {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.currencyButton:hover .currencyIcon {
+    transform: scale(1.1);
+}
+
+/* Tablet ve desktop için */
+@media (min-width: 768px) {
+    .currencyButton {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .currencyIcon {
+        font-size: 20px;
+    }
+}

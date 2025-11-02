@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #2a006f;
+}
+
+
+@media (max-width: 900px) {
+    .container {
+        background-position: center 30%;
+        padding: 36px 20px;
+    }
+
+    /* .container .login {
+        width: 460px;
+        padding: 48px;
+    } */
+}
+
+@media (max-width: 600px) {
+    .container {
+        background-image: none;
+        
+    }
+}

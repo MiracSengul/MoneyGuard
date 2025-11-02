@@ -1,0 +1,243 @@
+  .backgroundDah {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: radial-gradient(975px 400px at 10% 94%, rgba(255, 255, 255, 0.02), transparent 68% 10%), linear-gradient(27deg, #2b1e40 0%, #160a23 59%, #150723 100%);
+  }
+
+  .containerDash {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .leftContainerDash {
+      margin-bottom: 32px;
+  }
+
+  .CurrencyDash {
+      display: none;
+  }
+
+  .ellipse1,
+  .ellipse2,
+  .ellipse4,
+  .ellipse5 {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      z-index: 0;
+  }
+
+  .ellipse1 {
+      width: 137px;
+      height: 167px;
+      background: linear-gradient(163deg, #ae63bb, #421c7f);
+      filter: blur(100px);
+      opacity: 1;
+      left: 0;
+      top: 61px;
+      border-radius: 10%;
+  }
+
+  .ellipse2 {
+
+      width: 364px;
+      height: 416px;
+      bottom: 0;
+      right: 0;
+      background: rgb(100 24 110);
+      filter: blur(200px);
+      opacity: 1;
+  }
+
+
+
+  .ellipse4 {
+      display: none;
+  }
+
+  @media (max-width: 767px) {
+      .ellipse1 {
+          width: 82px;
+          height: 86px;
+          background: linear-gradient(297deg, #b94ecc, #872da6);
+          filter: blur(57px);
+          opacity: 1;
+          left: 0;
+          top: 48px;
+          border-radius: 0;
+      }
+
+
+      .ellipse2 {
+
+          width: 150px;
+          height: 150px;
+          bottom: 23px;
+          right: 0;
+          background: rgb(100 24 110);
+          filter: blur(100px);
+          opacity: 1;
+      }
+
+      .ellipse4 {
+          display: none;
+      }
+  }
+
+  .ellipse5 {
+      width: 371px;
+      height: 297px;
+      top: 238px;
+      background: linear-gradient(47deg, #2c0dcb 42.11%, #230e90 63.65%);
+      filter: blur(200px);
+      opacity: 1;
+      left: -22px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+      .containerDash {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
+
+      .CurrencyDash {
+          display: inline;
+      }
+
+      .leftContainerDash {
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          gap: 32px;
+      }
+
+      .ellipse1 {
+
+          display: none;
+      }
+
+
+      .ellipse2 {
+          width: 200px;
+          height: 200px;
+          bottom: 0;
+          right: 0;
+          background: rgb(100 24 110);
+          filter: blur(200px);
+          opacity: 1;
+      }
+
+      .ellipse4 {
+
+          width: 294px;
+          height: 356.1px;
+          top: 0;
+          left: 527px;
+          background: rgb(94 60 156);
+          filter: blur(200px);
+          opacity: 1;
+          border-radius: 0;
+      }
+
+
+      .ellipse5 {
+          width: 200px;
+          height: 200px;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(47deg, #2c0dcb 42.11%, #230e90 63.65%);
+          filter: blur(200px);
+          opacity: 1;
+          border-radius: 0;
+      }
+  }
+
+  @media (min-width: 1280px) {
+      .containerDash {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          margin-top: 40px;
+          gap: 69px;
+      }
+
+      .leftContainerDash {
+          margin-bottom: 32px;
+          border-right: solid 1px gray;
+      }
+
+      .tabletdivDash {
+          margin-bottom: 32px;
+      }
+
+      .CurrencyDash {
+          display: inline;
+      }
+
+      .ellipse1 {
+
+          width: 200px;
+          height: 407px;
+          background: linear-gradient(260deg, #673AB7, #421c7f);
+          filter: blur(200px);
+          opacity: 1;
+          right: 200px;
+          bottom: 200px;
+      }
+
+
+      .ellipse2 {
+
+          width: 364px;
+          height: 416px;
+          top: 697px;
+          left: 984px;
+          background: rgb(100 24 110);
+          filter: blur(200px);
+          opacity: 1;
+      }
+
+      .ellipse3 {
+
+          width: 739px;
+          height: 745px;
+          top: -164px;
+          left: -223px;
+          background: linear-gradient(219.62deg,
+                  rgba(109, 84, 235, 0.6) 28.31%,
+                  rgba(101, 35, 146, 0.6) 66.76%);
+          filter: blur(400px);
+          opacity: 1;
+      }
+
+
+      .ellipse4 {
+          border-radius: 0;
+          width: 279px;
+          height: 367.1px;
+          top: 247.43px;
+          left: 1431px;
+          background: rgb(14 11 134);
+          filter: blur(200px);
+          opacity: 1;
+      }
+
+
+      .ellipse5 {
+
+          width: 479px;
+          height: 297px;
+          top: 349px;
+          left: 326px;
+          background: linear-gradient(47deg, #2c0dcb 42.11%, #230e90 63.65%);
+          filter: blur(200px);
+          opacity: 1;
+      }
+
+  }

@@ -1,0 +1,219 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .loginCard {
+    background: linear-gradient(145deg, #4A397F, #2D263F);
+    border-radius: 16px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .logoSection {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .logoImage {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: block;
+  }
+  
+  .appTitle {
+    font-size: 1.75rem;
+    background: linear-gradient(135deg, #D89061, #B56095);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputIcon {
+    position: absolute;
+    left: 12px;
+    font-size: 1.25rem;
+    color: #8C83B0;
+    z-index: 1;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 14px 14px 14px 40px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .formInput:focus {
+    outline: none;
+    border-bottom-color: #B56095;
+    box-shadow: 0 2px 0 rgba(181, 96, 149, 0.3);
+  }
+  
+  .formInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .errorMessage {
+    color: #FF6B8B;
+    font-size: 0.85rem;
+    padding-left: 10px;
+    min-height: 20px;
+    display: block;
+    animation: errorShake 0.3s ease-in-out;
+  }
+  
+  @keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
+  
+  .errorMessage::before {
+    content: "•";
+    margin-right: 5px;
+  }
+  
+  .submitButton {
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #D89061, #B56095);
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .submitButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(181, 96, 149, 0.4);
+  }
+  
+  .submitButton:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  .submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .submitButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.2), 
+      transparent
+    );
+    transition: left 0.6s;
+  }
+  
+  .submitButton:hover::before {
+    left: 100%;
+  }
+  
+  .registerLink {
+    padding: 14px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  
+  .registerLink:hover {
+    background: #FFFFFF;
+    color: #4A397F;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .loginContainer {
+      padding: 15px;
+    }
+    
+    .loginCard {
+      padding: 40px 25px;
+    }
+    
+    .appTitle {
+      font-size: 1.5rem;
+    }
+    
+    .formInput {
+      padding: 12px 12px 12px 38px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .loginCard {
+      padding: 30px 20px;
+    }
+    
+    .logoImage {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .appTitle {
+      font-size: 1.4rem;
+    }
+    
+    .submitButton,
+    .registerLink {
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+  }

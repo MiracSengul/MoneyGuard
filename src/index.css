@@ -1,0 +1,156 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img{
+  display: block;
+  max-width: 100%;
+}
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body{
+  font-family: "Poppins", sans-serif;
+
+}
+
+
+.buttonEffect {
+	background: linear-gradient(96.76deg, #FFC727 -16.42%, #9E40BA 97.04%);
+	border: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	color: #ffffff;
+	font-weight: 700;
+	transition: all 0.3s ease;
+	padding: 14px;
+}
+
+.buttonEffect {
+	position: relative;
+	overflow: hidden;
+}
+
+.buttonEffect::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(
+		0deg,
+		transparent,
+		transparent 30%,
+		rgba(0,255,255,0.18)
+	);
+	transform: rotate(-45deg);
+	transition: opacity 0.45s ease, transform 0.6s ease;
+	opacity: 0;
+	pointer-events: none;
+	mix-blend-mode: screen;
+}
+
+.buttonEffect:hover,
+.buttonEffect:focus {
+	transform: translateZ(0) scale(1.05);
+}
+
+.buttonEffect:hover::before,
+.buttonEffect:focus::before {
+	opacity: 1;
+	transform: rotate(-45deg) translateY(100%);
+	animation: holoLoop 1.6s linear infinite;
+}
+
+@keyframes holoLoop {
+  0% { transform: rotate(-45deg) translateY(-10%); opacity: 0.6; }
+  40% { transform: rotate(-45deg) translateY(40%); opacity: 1; }
+  100% { transform: rotate(-45deg) translateY(100%); opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.buttonEffect::before,
+	.buttonEffect:hover::before,
+	.buttonEffect:focus::before {
+		transition: none;
+		animation: none !important;
+		opacity: 0;
+		transform: rotate(-45deg);
+	}
+}
+
+.cancelEffects {
+	border: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	font-weight: 700;
+	transition: all 0.3s ease;
+}
+
+.cancelEffects {
+	position: relative;
+	overflow: hidden;
+}
+
+.cancelEffects::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(
+		0deg,
+		transparent,
+		transparent 30%,
+		rgba(0,255,255,0.18)
+	);
+	transform: rotate(-45deg);
+	transition: opacity 0.45s ease, transform 0.6s ease;
+	opacity: 0;
+	pointer-events: none;
+	mix-blend-mode: screen;
+}
+
+.cancelEffects:hover,
+.cancelEffects:focus {
+	transform: translateZ(0) scale(1.05);
+	background: rgba(255, 133, 139, 0.9);
+	color: #fff;
+
+}
+
+.cancelEffects:hover::before,
+.cancelEffects:focus::before {
+	opacity: 1;
+	transform: rotate(-45deg) translateY(100%);
+	animation: holoLoop 1.6s linear infinite;
+}
+
+@keyframes holoLoop {
+  0% { transform: rotate(-45deg) translateY(-10%); opacity: 0.6; }
+  40% { transform: rotate(-45deg) translateY(40%); opacity: 1; }
+  100% { transform: rotate(-45deg) translateY(100%); opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cancelEffects::before,
+	.cancelEffects:hover::before,
+	.cancelEffects:focus::before {
+		transition: none;
+		animation: none !important;
+		opacity: 0;
+		transform: rotate(-45deg);
+	}
+}

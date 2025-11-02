@@ -1,0 +1,147 @@
+.filterWrapper {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.filterButton {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filterButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(158, 64, 186, 0.2);
+}
+
+.filterButton:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.filterButton:active {
+  transform: translateY(0);
+}
+
+.filterButton.active {
+  background: var(--active-gradient);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-color: transparent;
+}
+
+.filterButton.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.filterButton.active:hover::before {
+  left: 100%;
+}
+
+.filterButton.income.active {
+  color: #3A2B0C;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+@media (min-width: 768px) {
+  .filterWrapper {
+    justify-content: flex-end;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .filterWrapper {
+    gap: 16px;
+  }
+  
+  .filterButton {
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterWrapper {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .filterButton {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 16px;
+    flex: 1;
+    max-width: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filterButton {
+    transition: none;
+  }
+  
+  .filterButton:hover {
+    transform: none;
+  }
+  
+  .filterButton.active::before {
+    display: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .filterButton {
+    border: 2px solid #FFFFFF;
+    background: #000000;
+  }
+  
+  .filterButton.active {
+    background: #FFFFFF;
+    color: #000000;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .filterButton:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .filterButton:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0.95);
+  }
+  
+  .filterButton.active:active {
+    transform: scale(0.95);
+  }
+}

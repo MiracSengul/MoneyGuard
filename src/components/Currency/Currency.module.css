@@ -1,0 +1,152 @@
+.currencyPage {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(975px 400px at 10% 94%, rgba(255, 255, 255, 0.02), transparent 68% 10%), 
+                linear-gradient(27deg, #2b1e40 0%, #160a23 59%, #150723 100%);
+  }
+  
+  .contentWrapper {
+    background-color: rgba(74, 86, 226, 0.1);
+    color: #fff;
+    margin: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .ratesTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tableHeader {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+  }
+  
+  .tableHeader th {
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .tableBody td {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .tableRow {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .tableRow:hover {
+    background-color: rgba(75, 45, 117, 0.4);
+    transform: translateX(4px);
+  }
+  
+  .currencyName {
+    font-weight: 600;
+    color: #e2e8f0;
+  }
+  
+  .rateValue {
+    font-family: 'Courier New', monospace;
+    color: #cbd5e1;
+  }
+  
+  .backgroundEllipse {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    filter: blur(80px);
+    opacity: 0.8;
+  }
+  
+  .backgroundEllipse[data-type="purple"] {
+    width: 140px;
+    height: 170px;
+    background: linear-gradient(163deg, #ae63bb, #421c7f);
+    left: 0;
+    top: 60px;
+  }
+  
+  .backgroundEllipse[data-type="blue"] {
+    width: 480px;
+    height: 380px;
+    bottom: 40%;
+    left: 0;
+    background: linear-gradient(47deg, #2c0dcb 42%, #230e90 64%);
+  }
+  
+  .backgroundEllipse[data-type="pink"] {
+    width: 240px;
+    height: 340px;
+    bottom: 0;
+    right: 0;
+    background: rgb(100 24 110);
+  }
+  
+  .errorMessage {
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+  }
+  
+  /* Tablet Styles */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .contentWrapper {
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    
+    .navigation {
+      display: none;
+    }
+    
+    .backgroundEllipse {
+      display: none;
+    }
+    
+    .currencyPage {
+      all: unset;
+      display: block;
+      min-height: 100vh;
+      background: linear-gradient(27deg, #2b1e40 0%, #160a23 59%, #150723 100%);
+    }
+  }
+  
+  /* Desktop Styles */
+  @media (min-width: 1280px) {
+    .contentWrapper {
+      margin: 60px auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+    
+    .currencyPage {
+      all: unset;
+      display: block;
+      min-height: 100vh;
+      background: linear-gradient(27deg, #2b1e40 0%, #160a23 59%, #150723 100%);
+    }
+    
+    .navigation {
+      display: none;
+    }
+    
+    .ratesTable {
+      font-size: 1.1rem;
+    }
+    
+    .tableHeader th,
+    .tableBody td {
+      padding: 18px 24px;
+    }
+  }

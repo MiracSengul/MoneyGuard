@@ -1,0 +1,53 @@
+.containerBalance {
+  background-color: rgba(82, 59, 126, 0.6);
+  backdrop-filter: blur(8px);
+  width: 280px;
+  height: 80px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-weight: 400;
+}
+
+.balanceCard {
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  margin-top: 8px;
+  justify-content: center;
+  gap: 12px;
+}
+
+.titleBalance {
+  color: #8979a9;
+  font-size: 12px;
+}
+
+.balanceAmount {
+  color: rgba(251, 251, 251, 1);
+  font-size: 30px;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .containerBalance {
+    width: 336px;
+    margin-top: 28px;
+  }
+
+  .balanceCard {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .containerBalance {
+    width: 480px;
+    margin-top: 28px;
+  }
+
+  .balanceCard {
+    margin-left: 56px;
+    gap: 13px;
+  }
+
+}

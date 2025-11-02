@@ -1,0 +1,24 @@
+.title {
+  font-size: 30px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.box {
+  width: 280px;
+  height: 333px;
+  position: relative;
+}
+
+.centerText {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 180px;
+  left: 50px;
+  height: 32px;
+  width: 180px;
+}
