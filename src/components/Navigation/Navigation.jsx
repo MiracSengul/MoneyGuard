@@ -13,8 +13,8 @@ const Navigation = () => {
 
   const navItems = [
     { path: "/dashboard", icon: IoHomeSharp, label: "Home" },
-    { path: "/statistics", icon: SlGraph, label: "Statistics" },
-    { path: "/currency", icon: FaDollarSign, label: "Currency", isCurrency: true }
+    { path: "/statistics", icon: SlGraph, label: "Statistics" }
+    //{ path: "/currency", icon: FaDollarSign, label: "Currency", isCurrency: true }
   ];
 
   return (
